@@ -5,5 +5,46 @@ if (username1 != null){
     welcome_msg.innerText = `welcome back ${username1}`;
 }
 
+let container = document.getElementById("container");
+
+async function getData() {
+    let response = await fetch("https://fakestoreapi.com/products");
+
+    response = await response.json()
+
+    console.log(response[0])
+
+    response.forEach(element => {
+
+        let box = document.createElement("div")
+        box.classList.add("border")
+        box.classList.add("m-4")
+        box.classList.add("d-flex")
+        box.classList.add("flex-column")
+        box.classList.add("align-items-center")
+        box.classList.add("w-50")
 
 
+        let name = document.createElement("h3")
+        name.innerText = element.title
+        name.classList.add("text-center")
+
+        let img = document.createElement("img")
+        img.src = element.image
+        img.style.width = "50%"
+
+        let price = document.createElement("h3")
+        price.innerText = element.price
+
+        box.appendChild(name)
+        box.appendChild(img)
+        box.appendChild(price)
+
+        container.appendChild(box)
+
+    });
+
+}
+
+
+getData();
