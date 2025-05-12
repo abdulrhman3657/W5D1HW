@@ -23,18 +23,27 @@ async function getData() {
         box.classList.add("flex-column")
         box.classList.add("align-items-center")
         box.classList.add("w-50")
+        box.classList.add("rounded-4")
+        box.classList.add("bg-dark")
+        box.classList.add("text-light")
 
 
         let name = document.createElement("h3")
         name.innerText = element.title
         name.classList.add("text-center")
+        name.classList.add("m-3")
 
         let img = document.createElement("img")
         img.src = element.image
         img.style.width = "50%"
+        img.classList.add("rounded-4")
 
         let price = document.createElement("h3")
         price.innerText = element.price
+        price.classList.add("m-3")
+        price.classList.add("btn")
+        price.classList.add("btn-light")
+        price.classList.add("fs-4")
 
         box.appendChild(name)
         box.appendChild(img)
