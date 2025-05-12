@@ -17,15 +17,13 @@ async function getData() {
     response.forEach(element => {
 
         let box = document.createElement("div")
-        box.classList.add("border")
+        box.style.border = "3px solid"
         box.classList.add("m-4")
         box.classList.add("d-flex")
         box.classList.add("flex-column")
         box.classList.add("align-items-center")
         box.classList.add("w-50")
         box.classList.add("rounded-4")
-        box.classList.add("bg-dark")
-        box.classList.add("text-light")
 
 
         let name = document.createElement("h3")
@@ -42,7 +40,7 @@ async function getData() {
         price.innerText = element.price
         price.classList.add("m-3")
         price.classList.add("btn")
-        price.classList.add("btn-light")
+        price.classList.add("btn-dark")
         price.classList.add("fs-4")
 
         box.appendChild(name)
